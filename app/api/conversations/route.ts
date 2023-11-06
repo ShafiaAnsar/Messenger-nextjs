@@ -78,7 +78,7 @@ export async function POST(
     if (singleConversation) {
       return NextResponse.json(singleConversation);
     }
-
+    if(!singleConversation){
     const newConversation = await prisma.conversation.create({
       data: {
         users: {
@@ -96,6 +96,8 @@ export async function POST(
         users: true
       }
     });
+    return NextResponse.json(newConversation)
+  }
 
     // // Update all connections with new conversation
     // newConversation.users.map((user) => {
@@ -104,7 +106,7 @@ export async function POST(
     //   }
     // });
 
-    return NextResponse.json(newConversation)
+    
   } catch (error) {
     return new NextResponse('Internal Error', { status: 500 });
   }
