@@ -1,12 +1,12 @@
 'use client'
 
-import useConversion from "@/app/hooks/useConversation"
+import useConversation from "@/app/hooks/useConversation"
 import useRoutes from "@/app/hooks/useRoute"
 import MobileItem from "./MobileItem"
 
  const MobileFooter = () => {
   const routes = useRoutes()
-  const {isOpen} = useConversion()
+  const {isOpen} = useConversation()
   if(isOpen){
     return null
   }
