@@ -4,6 +4,7 @@ import { User } from "@prisma/client"
 import { useCallback, useState } from 'react'
 import axios from 'axios'
 import Avatar from '@/app/components/Avatar'
+import LoadingModal from '@/app/components/LoadingModal'
 
 interface UserListProps{
     data:User
@@ -21,6 +22,9 @@ const UserBox:React.FC<UserListProps> = ({data}) => {
     .finally(() => setIsLoading(false));
   }, [data, router]);
   return (
+    <>
+    {isLoading && (<LoadingModal/>)}
+    
     <div
     onClick={handleClick}
     className='w-full relative space-x-3 bg-white  flex items-center p-3 hover:bg-neutral-100 rounded-lg transition cursor-pointer'
@@ -35,6 +39,7 @@ const UserBox:React.FC<UserListProps> = ({data}) => {
         </div>
         
     </div>
+    </>
   )
 }
 
