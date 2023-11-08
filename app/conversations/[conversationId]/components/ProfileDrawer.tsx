@@ -24,17 +24,17 @@ interface ProfileDrawerProps {
 const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
   isOpen,
   onClose,
-  data,
+  data
 }) => {
   const [confirmOpen, setConfirmOpen] = useState(false);
   const otherUser = useOtherUser(data);
   
   const joinedDate = useMemo(() => {
-    return format(new Date(otherUser.createdAt), 'PP');
-  }, [otherUser.createdAt]);
+    return format(new Date(otherUser?.createdAt), 'p');
+  }, [otherUser?.createdAt]);
   
   const title = useMemo(() => {
-    return data.name || otherUser.name;
+    return data.name || otherUser?.name;
   }, [data.name, otherUser.name]);
 
   const { members } = useActiveList();
