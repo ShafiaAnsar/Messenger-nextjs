@@ -40,7 +40,7 @@ const Header:React.FC<HeaderProps> = ({conversation}) => {
              
              <div className='flex flex-col'>
                 <div className="">
-                    {conversation.name || otherUser.name}
+                    {conversation.name || otherUser?.name}
                 </div>
                 <div className="text-sm font-light text-neutral-500">
                     {statusText}
