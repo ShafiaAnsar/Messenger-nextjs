@@ -22,12 +22,12 @@ const useRoutes = () => {
       icon: HiUsers, 
       active: pathname === '/users'
     },
-    {
-      label: 'Logout', 
-      onClick: () => signOut(),
-      href: '#',
-      icon: HiArrowLeftOnRectangle, 
-    }
+    // {
+    //   label: 'Logout', 
+    //   onClick: () => signOut(),
+    //   href: '#',
+    //   icon: HiArrowLeftOnRectangle, 
+    // }
   ], [pathname, conversationId]);
 
   return routes;
