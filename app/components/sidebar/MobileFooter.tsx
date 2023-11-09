@@ -1,6 +1,6 @@
 'use client'
 
-import useConversation from "@/app/hooks/useConversation"
+import SettingsModal from "./SettingModal";
 import useRoutes from "@/app/hooks/useRoute"
 import MobileItem from "./MobileItem"
 import { useState } from "react"
@@ -18,6 +18,10 @@ interface MobileFooterProps{
     return null
   }
    return (
+    <>
+    <SettingsModal currentUser={currentUser} isOpen={isOpen} onClose={() => setIsOpen(false)} />
+
+    
      <div className="
      fixed justify-between w-full bottom-0 flex items-center bg-white border-t-[1px] z-40 lg:hidden
      ">{
@@ -38,6 +42,7 @@ interface MobileFooterProps{
             <Avatar user={currentUser} />
           </div>
      </div>
+     </>
    )
  }
  
