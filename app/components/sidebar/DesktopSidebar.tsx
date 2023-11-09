@@ -50,9 +50,7 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({
               />
               
             ))}
-          </ul>
-        </nav>
-        <nav className="mt-4 flex flex-col justify-between items-center">
+            <nav className="mt-4 flex flex-col justify-between items-center">
           <div 
             onClick={() => setIsOpen(true)} 
             className="cursor-pointer hover:opacity-75 transition"
@@ -60,6 +58,16 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({
             <Avatar user={currentUser} />
           </div>
         </nav>
+          </ul>
+        </nav>
+        {/* <nav className="mt-4 flex flex-col justify-between items-center">
+          <div 
+            onClick={() => setIsOpen(true)} 
+            className="cursor-pointer hover:opacity-75 transition"
+          >
+            <Avatar user={currentUser} />
+          </div>
+        </nav> */}
       </div>
     </>
    );
