@@ -3,10 +3,17 @@
 import useConversation from "@/app/hooks/useConversation"
 import useRoutes from "@/app/hooks/useRoute"
 import MobileItem from "./MobileItem"
+import { useState } from "react"
+import { User } from "@prisma/client"
+import Avatar from "../Avatar";
 
- const MobileFooter = () => {
+interface MobileFooterProps{
+  currentUser: User
+}
+ const MobileFooter:React.FC<MobileFooterProps> = ({currentUser}) => {
+  const [isOpen, setIsOpen] = useState(false);
   const routes = useRoutes()
-  const {isOpen} = useConversation()
+  // const {isOpen} = useConversation()
   if(isOpen){
     return null
   }
@@ -24,7 +31,12 @@ import MobileItem from "./MobileItem"
         />
       ))
      }
-      
+      <div 
+            onClick={() => setIsOpen(true)} 
+            className="cursor-pointer hover:opacity-75 transition mr-3"
+          >
+            <Avatar user={currentUser} />
+          </div>
      </div>
    )
  }
