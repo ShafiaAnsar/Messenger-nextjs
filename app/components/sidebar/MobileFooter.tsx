@@ -6,20 +6,21 @@ import MobileItem from "./MobileItem"
 import { useState } from "react"
 import { User } from "@prisma/client"
 import Avatar from "../Avatar";
+import useConversation from "@/app/hooks/useConversation";
 
 interface MobileFooterProps{
   currentUser: User
 }
  const MobileFooter:React.FC<MobileFooterProps> = ({currentUser}) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenModal, setIsModalOpen] = useState(false);
   const routes = useRoutes()
-  // const {isOpen} = useConversation()
-  // if(isOpen){
-  //   return null
-  // }
+  const {isOpen} = useConversation()
+  if(isOpen){
+    return null
+  }
    return (
     <>
-    <SettingsModal currentUser={currentUser} isOpen={isOpen} onClose={() => setIsOpen(false)} />
+    <SettingsModal currentUser={currentUser} isOpen={isOpenModal} onClose={() => setIsModalOpen(false)} />
      <div className="
      fixed justify-between w-full bottom-0 flex items-center bg-white border-t-[1px] z-40 lg:hidden
      ">{
@@ -34,7 +35,7 @@ interface MobileFooterProps{
       ))
      }
       <div 
-            onClick={() => setIsOpen(true)} 
+            onClick={() => setIsModalOpen(true)} 
             className="cursor-pointer hover:opacity-75 transition mr-3"
           >
             <Avatar user={currentUser} />
