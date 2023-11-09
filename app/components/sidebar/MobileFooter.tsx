@@ -14,14 +14,12 @@ interface MobileFooterProps{
   const [isOpen, setIsOpen] = useState(false);
   const routes = useRoutes()
   // const {isOpen} = useConversation()
-  if(isOpen){
-    return null
-  }
+  // if(isOpen){
+  //   return null
+  // }
    return (
     <>
     <SettingsModal currentUser={currentUser} isOpen={isOpen} onClose={() => setIsOpen(false)} />
-
-    
      <div className="
      fixed justify-between w-full bottom-0 flex items-center bg-white border-t-[1px] z-40 lg:hidden
      ">{
