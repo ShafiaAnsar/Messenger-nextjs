@@ -27,6 +27,6 @@ A feature-rich messenger app built with Next.js, TypeScript, Prisma, and Tailwin
 ![Screenshot (29)](https://github.com/ShafiaAnsar/Messenger-nextjs/assets/92047387/682fd74e-7a39-4240-87d1-7242449ce56c)
 ## Create Group Chat
 ![Screenshot (31)](https://github.com/ShafiaAnsar/Messenger-nextjs/assets/92047387/17727bfc-96f5-4279-ba97-57c59c3b28a5)
-#Live Webiste 
+##Live Webiste 
 Check out the live demo of the Messenger App here. https://messenger-clone-ochre.vercel.app/
 
